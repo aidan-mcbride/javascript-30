@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
+html {
+  background-color: #8854d0;
+  background-image: url('./background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: 'Monoton', sans-serif;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  background: rgb(250,130,49);
+  background: linear-gradient(60deg, rgba(56,103,214,1) 0%, rgba(136,84,208,1) 15%, rgba(165,94,234,1) 25%, rgba(235,59,90,1) 40%, rgba(247,183,49,1) 60%, rgba(254,211,48,1) 80%, rgba(250,130,49,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.keys, .key {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.keys > *+* {
+  margin-left: .25rem;
+}
+
+.key {
+  position: relative;
+  flex-direction: column;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  color: white;
+  border-radius: 2px;
+}
+.key::before, .key::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  z-index: -1;
+  opacity: 0;
+  transition: ease opacity 500ms;
+}
+.key::before {
+  background-color: rgba(6,9,15,.5);
+  z-index: -2;
+  opacity: 1
+}
+.key:nth-of-type(1)::after { background-color: #a55eea}
+.key:nth-of-type(2)::after { background-color: #2d98da}
+.key:nth-of-type(3)::after { background-color: #2bcbba}
+.key:nth-of-type(4)::after { background-color: #26de81}
+.key:nth-of-type(5)::after { background-color: #fed330}
+.key:nth-of-type(6)::after { background-color: #f7b731}
+.key:nth-of-type(7)::after { background-color: #fd9644}
+.key:nth-of-type(8)::after { background-color: #fc5c65}
+.key:nth-of-type(9)::after { background-color: #eb3b5a}
+
+.playing::after {
+  opacity: 1;
+  transition: ease opacity 50ms;
+}
+
+.key>kbd {
+  font-family: 'Monoton', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.sound {
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
