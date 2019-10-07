@@ -7,3 +7,11 @@
 **CSS Variables** can be updated from JS, unlike pre-processor variables which are compiled.
 
 An **array** has array methods, a nodelist does not.
+
+
+**[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)**
+```JavaScript
+fetch(someApi)
+  .then(res => res.json())  // convert response blob to JSON
+  .then(jsonData => console.log(jsonData)); // do something with data
+```
